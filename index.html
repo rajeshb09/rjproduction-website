@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a35">
+  <meta name="description" content="RJ PRODUCTION provides website and app development, CCTV security, computer services, digital marketing, photography, video editing and technology solutions.">
+  <title>RJ PRODUCTION | Technology • Digital • Security • Promotion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+<!-- RJ PRODUCTION Favicon -->
+<link rel="icon" type="image/png" href="assets/logo/rj-production-logo.png">
+<link rel="apple-touch-icon" href="assets/logo/rj-production-logo.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style id="rj-premium-interaction-effects">
+    /* Video stays inside the original framed hero area. */
+    .hero-video-art .hero-video-panel {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #eee7df;
+    }
+    .hero-video-art .rj-hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #eee7df;
+    }
+    .hero-video-art .reference-inner-border {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-video-art .hero-video-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 24px;
+      text-align: center;
+      color: #241f25;
+      background: radial-gradient(circle at 70% 25%,rgba(239,91,120,.22),transparent 38%),linear-gradient(135deg,#f8d9d0,#f4eee7 58%,#f8c9bd);
+    }
+    .hero-video-art .hero-video-fallback strong {
+      font: 800 clamp(22px,3vw,38px) Manrope,sans-serif;
+      letter-spacing: .13em;
+    }
+    .hero-video-art .hero-video-fallback small {font:500 12px "DM Sans",sans-serif;opacity:.72}
+    .hero-video-art .fallback-play-icon {
+      width:54px;height:54px;display:grid;place-items:center;padding-left:3px;border-radius:50%;color:#fff;
+      background:linear-gradient(135deg,#ff795e,#df4e82);box-shadow:0 8px 25px rgba(220,78,110,.25)
+    }
+
+    /* Global glowing red cursor dot — matching the supplied screenshot. */
+    @media (hover:hover) and (pointer:fine) {
+      html,body,body * {cursor:none !important}
+      .rj-glow-cursor {
+        position:fixed;left:0;top:0;z-index:1000000;width:18px;height:18px;border-radius:50%;
+        pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);
+        background:#fff; border:3px solid #ff6570;
+        box-shadow:0 0 0 5px rgba(255,72,83,.24),0 0 16px 8px rgba(255,53,65,.78),0 0 48px 18px rgba(255,45,55,.26);
+        will-change:transform, width, height, box-shadow;
+        transition:opacity .18s ease,width .18s ease,height .18s ease,box-shadow .18s ease;
+      }
+      .rj-glow-cursor.is-visible {opacity:1}
+      .rj-glow-cursor.is-hovering {
+        width:25px;height:25px;
+        box-shadow:0 0 0 7px rgba(255,72,83,.22),0 0 23px 11px rgba(255,53,65,.82),0 0 65px 24px rgba(255,45,55,.3);
+      }
+      .rj-glow-cursor.is-clicking {
+        width:13px;height:13px;
+        box-shadow:0 0 0 9px rgba(255,72,83,.25),0 0 27px 13px rgba(255,53,65,.9),0 0 70px 25px rgba(255,45,55,.32);
+      }
+    }
+    @media (hover:none),(pointer:coarse) {.rj-glow-cursor{display:none!important}}
+
+    /* Premium animated gradient buttons inspired by the supplied Download for Mac button. */
+    :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp,.contact-method,.main-nav a) {
+      position:relative;
+      isolation:isolate;
+      transition:color .3s ease,background .35s ease,border-color .3s ease,box-shadow .35s ease,transform .3s cubic-bezier(.2,.8,.2,1);
+    }
+    :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp)::before {
+      content:"";position:absolute;inset:-2px;z-index:-1;border-radius:inherit;
+      background:linear-gradient(115deg,#ff8b5d,#ef4d5c,#d84e9b,#6c82ef,#ff8b5d);
+      background-size:260% 260%;opacity:0;filter:blur(11px);
+      transition:opacity .3s ease;animation:rjButtonGradient 5s linear infinite;
+    }
+    :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp):hover {
+      transform:translateY(-3px);
+      box-shadow:0 12px 32px rgba(224,75,91,.18),0 0 0 1px rgba(255,132,105,.2);
+    }
+    :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp):hover::before {opacity:.8}
+    :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp):active {transform:translateY(-1px) scale(.98)}
+    .btn-primary:hover {filter:saturate(1.12) brightness(1.04)}
+    .btn-ghost:hover,.theme-toggle:hover {border-color:#ed7c75}
+    .service-link:hover {color:#f05b63}
+    .main-nav a::after {transition:width .3s ease,background .3s ease}
+    .main-nav a:hover {color:#f05b63;transform:translateY(-2px)}
+    @keyframes rjButtonGradient {0%{background-position:0% 50%}100%{background-position:260% 50%}}
+
+    /* Animate the two brand text lines independently. */
+    .brand-copy strong {
+      display:inline-block;
+      transform-origin:left center;
+      animation:rjBrandTitleIn .85s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .brand-copy small {
+      display:inline-block;
+      animation:rjBrandSubtitleIn 1s .18s cubic-bezier(.2,.8,.2,1) both;
+    }
+    @keyframes rjBrandTitleIn {from{opacity:0;transform:translateY(12px);letter-spacing:.22em;filter:blur(5px)}to{opacity:1;transform:translateY(0);letter-spacing:inherit;filter:blur(0)}}
+    @keyframes rjBrandSubtitleIn {from{opacity:0;transform:translateX(15px);filter:blur(4px)}to{opacity:1;transform:translateX(0);filter:blur(0)}}
+
+    /* Full-screen moonlight / sunlight transition when switching theme. */
+    .rj-celestial-transition {
+      position:fixed;inset:0;z-index:999990;pointer-events:none;overflow:hidden;
+      clip-path:circle(0 at var(--rj-origin-x,50%) var(--rj-origin-y,50%));
+      opacity:1;
+    }
+    .rj-celestial-transition.is-running {animation:rjCelestialReveal 1.25s cubic-bezier(.2,.72,.2,1) forwards}
+    .rj-celestial-transition.night {
+      background:radial-gradient(ellipse at 50% 48%,rgba(106,132,184,.34),rgba(31,45,83,.92) 55%,#080d1c 100%);
+    }
+    .rj-celestial-transition.day {
+      background:radial-gradient(ellipse at 50% 48%,rgba(255,239,166,.58),rgba(255,185,113,.82) 55%,#fff1d6 100%);
+    }
+    .rj-celestial-object {
+      position:absolute;left:50%;top:50%;width:clamp(100px,16vw,190px);aspect-ratio:1;
+      transform:translate(-50%,-50%) scale(.35);border-radius:50%;
+      display:grid;place-items:center;font-size:clamp(60px,9vw,112px);
+      filter:drop-shadow(0 0 35px currentColor);
+      animation:rjCelestialFloat 1.25s ease-out forwards;
+    }
+    .night .rj-celestial-object {color:#fff3c4;text-shadow:0 0 20px #fff,0 0 55px #c7dcff}
+    .day .rj-celestial-object {color:#fff5a8;text-shadow:0 0 20px #fff,0 0 65px #ffb94d}
+    .rj-celestial-caption {
+      position:absolute;left:50%;top:calc(50% + 115px);transform:translate(-50%,12px);
+      color:#fff;font:700 10px Manrope,sans-serif;letter-spacing:.35em;white-space:nowrap;
+      text-shadow:0 2px 12px rgba(0,0,0,.35);opacity:0;animation:rjCelestialCaption 1.25s ease forwards;
+    }
+    @keyframes rjCelestialReveal {
+      0%{clip-path:circle(0 at var(--rj-origin-x,50%) var(--rj-origin-y,50%));opacity:.98}
+      62%{opacity:.9}
+      100%{clip-path:circle(150vmax at var(--rj-origin-x,50%) var(--rj-origin-y,50%));opacity:0}
+    }
+    @keyframes rjCelestialFloat {0%{transform:translate(-50%,-50%) scale(.25) rotate(-25deg)}55%{transform:translate(-50%,-50%) scale(1.08) rotate(8deg)}100%{transform:translate(-50%,-50%) scale(1) rotate(0)}}
+    @keyframes rjCelestialCaption {25%{opacity:0;transform:translate(-50%,12px)}55%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-8px)}}
+    @media (prefers-reduced-motion:reduce) {
+      .brand-copy strong,.brand-copy small {animation:none}
+      :is(.btn,.service-link,.theme-toggle,.back-top,.floating-whatsapp)::before {animation:none}
+      .rj-celestial-transition.is-running {animation-duration:.3s}
+      .rj-celestial-object,.rj-celestial-caption {animation-duration:.3s}
+    }
+  </style>
+<style id="rj-working-day-night-scene">
+html,body{min-height:100%;background:transparent!important}
+body{position:relative;isolation:isolate}
+#rj-environment{position:fixed!important;inset:0!important;z-index:-1!important;overflow:hidden!important;pointer-events:none!important;opacity:0;visibility:hidden;transition:opacity 1s,visibility 1s}
+#rj-environment.is-active{opacity:1;visibility:visible}
+#rj-environment .rj-sky{position:absolute;inset:0;transition:opacity 1.3s}
+#rj-environment .rj-sky-day{opacity:0;background:linear-gradient(180deg,#f9dba9 0%,#efbd8a 40%,#cf8962 72%,#9c5948 100%)}
+#rj-environment .rj-sky-day:before{content:"";position:absolute;width:clamp(110px,16vw,210px);height:clamp(110px,16vw,210px);border-radius:50%;right:12%;top:11%;background:radial-gradient(circle,#fff8cf 0 25%,#ffe4a0 42%,rgba(255,204,117,.45) 62%,transparent 72%);filter:blur(1px);box-shadow:0 0 75px 30px rgba(255,214,143,.42)}
+#rj-environment .rj-sky-night{opacity:0;background:radial-gradient(ellipse at 50% 45%,rgba(83,94,177,.35),transparent 32%),radial-gradient(ellipse at 80% 15%,rgba(79,89,165,.25),transparent 36%),linear-gradient(180deg,#02040d 0%,#09142e 52%,#17172f 100%)}
+#rj-environment.is-day .rj-sky-day{opacity:1}#rj-environment.is-night .rj-sky-night{opacity:1}
+#rj-environment .rj-dunes{position:absolute;left:-12%;right:-12%;bottom:-3%;height:43%;opacity:0;transition:opacity 1.3s;background:radial-gradient(ellipse 65% 75% at 15% 100%,#98543c 0 58%,transparent 59%),radial-gradient(ellipse 62% 85% at 78% 112%,#b66e48 0 59%,transparent 60%),radial-gradient(ellipse 75% 90% at 47% 130%,#d69a5c 0 60%,transparent 61%),linear-gradient(180deg,transparent,rgba(112,59,43,.22));filter:blur(1px)}
+#rj-environment.is-day .rj-dunes{opacity:.94}
+#rj-environment .rj-galaxy-glow{position:absolute;inset:-20%;opacity:0;transition:opacity 1.3s;background:radial-gradient(ellipse at 50% 37%,rgba(177,183,255,.24),transparent 9%),radial-gradient(ellipse at 48% 42%,rgba(112,126,228,.17),transparent 22%),radial-gradient(ellipse at 54% 48%,rgba(196,145,255,.12),transparent 40%);transform:rotate(-17deg)}
+#rj-environment.is-night .rj-galaxy-glow{opacity:1}
+#rj-environment .rj-star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(218,231,255,.9);opacity:0;animation:rjStarPulse var(--twinkle,3s) ease-in-out infinite alternate}
+#rj-environment.is-night .rj-star{opacity:var(--star-opacity,.8)}
+@keyframes rjStarPulse{from{transform:scale(.55);opacity:.22}to{transform:scale(1.8);opacity:1}}
+#rj-environment .rj-particle{position:absolute;top:-12vh;left:var(--x);opacity:0;will-change:transform}
+#rj-environment.is-night .rj-particle.snow{width:var(--size);height:var(--size);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 35%,#dcecff 72%,rgba(210,230,255,.1));box-shadow:0 0 8px rgba(220,238,255,.85);opacity:var(--alpha);animation:rjSnowFall var(--duration) linear var(--delay) infinite}
+#rj-environment.is-day .rj-particle.sand{width:var(--length);height:2px;border-radius:50%;background:linear-gradient(90deg,transparent,rgba(255,237,196,.95),transparent);opacity:var(--alpha);animation:rjSandWind var(--duration) linear var(--delay) infinite}
+@keyframes rjSnowFall{0%{transform:translate3d(0,-10vh,0) rotate(0)}50%{transform:translate3d(var(--drift),55vh,0) rotate(180deg)}100%{transform:translate3d(calc(var(--drift)*-.4),115vh,0) rotate(360deg)}}
+@keyframes rjSandWind{0%{transform:translate3d(-22vw,0,0) rotate(-7deg)}100%{transform:translate3d(125vw,48vh,0) rotate(7deg)}}
+body>main,body>main>.hero,body>main>section,body>main>.section,body .hero,body .trust-strip,body .services-section,body .about-section,body .work-section,body .portfolio-section,body .contact-section{background-color:transparent!important;background-image:none!important}
+body>header.site-header{background:rgba(255,250,244,.48)!important;backdrop-filter:blur(18px)}
+:root[data-theme="dark"] body>header.site-header{background:rgba(5,9,22,.58)!important}
+body>footer.site-footer{background:rgba(30,17,15,.68)!important;backdrop-filter:blur(12px)}
+#themeToggle.theme-toggle{background:transparent!important;background-image:none!important;border:0!important;outline:0!important;box-shadow:none!important;border-radius:50%!important;width:48px!important;height:48px!important;min-width:48px!important;padding:0!important;overflow:visible!important}
+#themeToggle.theme-toggle:before,#themeToggle.theme-toggle:after{display:none!important;content:none!important}
+#themeToggle .theme-toggle-icon{display:grid;place-items:center;width:100%;height:100%;background:transparent!important;border:0!important;box-shadow:none!important;font-size:25px;transition:transform .45s,color .45s,filter .45s}
+#themeToggle:hover .theme-toggle-icon{transform:rotate(25deg) scale(1.18);filter:drop-shadow(0 0 10px currentColor)}
+.rj-theme-wipe{position:fixed;inset:0;z-index:999990;pointer-events:none;clip-path:circle(0 at var(--x) var(--y));opacity:.98}
+.rj-theme-wipe.to-night{background:radial-gradient(circle at 50% 45%,#7185b8,#18264e 52%,#02040d)}
+.rj-theme-wipe.to-day{background:radial-gradient(circle at 50% 45%,#fff5ca,#f8c17d 52%,#a75e46)}
+.rj-theme-wipe.run{animation:rjThemeBloom 1.05s cubic-bezier(.2,.72,.2,1) forwards}
+.rj-theme-wipe span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(75px,14vw,160px);color:#fff8df;text-shadow:0 0 30px white,0 0 75px currentColor}
+.rj-theme-wipe.fade-out{opacity:0;transition:opacity .35s}
+@keyframes rjThemeBloom{to{clip-path:circle(150vmax at var(--x) var(--y))}}
+@media(prefers-reduced-motion:reduce){#rj-environment .rj-particle,#rj-environment .rj-star{animation:none!important}.rj-theme-wipe.run{animation-duration:.2s}}
+</style>
+
+
+<style id="rj-day-night-background-video-css">
+#rj-environment .rj-background-video{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center!important;border:0!important;
+  z-index:2!important;pointer-events:none!important;background:transparent!important;
+  opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 1s ease;
+}
+#rj-environment.is-day .rj-background-video-day,
+#rj-environment.is-night .rj-background-video-night{opacity:1;visibility:visible}
+#rj-environment .rj-sky{z-index:1}
+#rj-environment .rj-galaxy-glow{z-index:1}
+#rj-environment .rj-dunes{z-index:1}
+#rj-environment .rj-weather-layer{position:absolute;inset:0;z-index:4;overflow:hidden}
+#rj-environment .rj-star{z-index:5}
+#rj-environment .rj-particle{z-index:6}
+#rj-environment.is-day.has-day-video .rj-sky-day,
+#rj-environment.is-day.has-day-video .rj-dunes,
+#rj-environment.is-night.has-night-video .rj-sky-night,
+#rj-environment.is-night.has-night-video .rj-galaxy-glow{opacity:0!important;visibility:hidden!important}
+#rj-environment.is-day.has-day-video .rj-background-video-day,
+#rj-environment.is-night.has-night-video .rj-background-video-night{opacity:1!important;visibility:visible!important}
+</style>
+
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="RJ PRODUCTION home">
+        <img class="brand-logo" src="assets/logo/rj-production-logo.png" alt="RJ PRODUCTION logo">
+        <span class="brand-copy"><strong>RJ PRODUCTION</strong><small>TECHNOLOGY & DIGITAL SOLUTIONS</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">Process</a>
+        <a href="#contact">Contact</a>
+        <button class="rj-colors-trigger" id="rjColorsTrigger" type="button" aria-label="Customize website text colors" aria-controls="rjColorsPanel" aria-expanded="false" title="Change text colors"><span aria-hidden="true">◉</span><span class="rj-colors-trigger-label">Colors</span></button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" aria-pressed="false"><span class="theme-toggle-icon">☾</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Optional visitor text-color settings. Existing site sections are unchanged. -->
+  <div class="rj-colors-backdrop" id="rjColorsBackdrop" hidden></div>
+  <aside class="rj-colors-panel" id="rjColorsPanel" aria-label="Text color customization" aria-hidden="true" inert>
+    <div class="rj-colors-panel-head">
+      <div><span class="rj-colors-kicker">RJ PRODUCTION</span><h2>Text color studio</h2><p>Choose one color and the website text colors adjust automatically.</p></div>
+      <button type="button" class="rj-colors-close" id="rjColorsClose" aria-label="Close color settings">×</button>
+    </div>
+    <div class="rj-colors-panel-scroll">
+      
+      <div class="rj-colors-presets">
+        <div class="rj-colors-presets-title"><strong>Quick gradient colors</strong><small>Applies automatically across all website text</small></div>
+        <button type="button" class="rj-colors-auto" id="rjColorsAuto" aria-pressed="false">▶ Auto change colors</button>
+        <div class="rj-colors-swatches" id="rjColorsSwatches"></div>
+      </div>
+      <p class="rj-colors-hint">Your selected palette is saved in this browser. Reset restores the original website colors.</p>
+      <button type="button" class="rj-colors-reset" id="rjColorsReset">↺ Reset all text colors</button>
+    </div>
+  </aside>
+
+
+  <main>
+    
+    <section class="hero hero-reference" id="home">
+      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="container hero-reference-grid">
+        <div class="hero-reference-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR TRUSTED TECHNOLOGY PARTNER</div>
+          <h1 class="hero-animated-heading">
+            <span class="hero-heading-static">We build</span>
+            <span class="typed-word-box"><span class="typed-word">digital experiences</span></span>
+          </h1>
+          <p class="hero-text">Technology that moves your business forward. From security systems to digital growth, we bring everything together under one roof.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">Explore Services <span>↗</span></a>
+            <a class="btn btn-ghost" href="#contact">Let's Talk <span>→</span></a>
+          </div>
+          <div class="hero-reference-stats">
+            <div><strong>6+</strong><small>CORE SERVICE AREAS</small></div>
+            <div><strong>100%</strong><small>% COMMITMENT</small></div>
+            <div><strong>RJ</strong><small>YOUR TECH PARTNER</small></div>
+          </div>
+        </div>
+        <div class="hero-reference-art hero-video-art" aria-label="RJ Production video showcase">
+          <div class="reference-panel hero-video-panel">
+            <video
+              class="rj-hero-video"
+              id="rjHeroVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              poster="assets/videos/showreel-poster.jpg"
+              aria-label="RJ Production showreel">
+              <source src="assets/videos/rj-production-showreel.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <div class="hero-video-fallback" id="rjVideoFallback">
+              <span class="fallback-play-icon">▶</span>
+              <strong>RJ PRODUCTION</strong>
+              <small>Place your video at assets/videos/rj-production-showreel.mp4</small>
+            </div>
+            <div class="reference-inner-border"></div>
+          </div>
+          <!--
+          <div class="reference-float reference-float-top">
+            
+            <span class="reference-float-icon">⌘</span>
+            <span><b>Digital</b><small>Creative solutions</small></span>
+          </div>
+          <div class="reference-float reference-float-bottom">
+            <span class="reference-security-icon">◉</span>
+            <span><b>Security</b><small>Protection 24/7</small></span>
+          </div>-->
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-inner"><span>ONE PARTNER FOR YOUR NEEDS</span><div><i>✦</i> Technology</div><div><i>✦</i> Digital</div><div><i>✦</i> Security</div><div><i>✦</i> Promotion</div></div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> WHAT WE DO</div><h2>Our services, <span>all in one place.</span></h2></div>
+          <p>Explore our services and find the right solution for your home, business or next big idea.</p>
+        </div>
+        <div class="service-grid" id="serviceGrid">
+          <article class="service-card"><img class="service-banner" src="assets/banners/banner-website-app.jpg" alt="WEBSITE DEVELOPMENT banner" loading="lazy"><span class="service-number">01</span><h3>Website Development</h3><p>Responsive business websites, landing pages and online presence built around your goals.</p><a href="#contact" class="service-link" data-service="Website Development">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/banners/mobile-app-banner.jpg" alt="MOBILE APP DEVELOPMENT banner" loading="lazy"><span class="service-number">02</span><h3>Mobile App Development</h3><p>Android and cross-platform app experiences for services, stores and business workflows.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/service-cctv.jpg" alt="CCTV & SECURITY banner" loading="lazy"><span class="service-number">03</span><h3>CCTV & Security</h3><p>CCTV camera installation, setup, maintenance and practical security solutions.</p><a href="#contact" class="service-link" data-service="CCTV & Security">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/computer-service-banner.jpg" alt="COMPUTER & LAPTOP SERVICE banner" loading="lazy"><span class="service-number">04</span><h3>Computer & Laptop Service</h3><p>Computer, laptop and desktop troubleshooting, repairs, upgrades and technical support.</p><a href="#contact" class="service-link" data-service="Computer & Laptop Service">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/service-digital.jpg" alt="DIGITAL MARKETING banner" loading="lazy"><span class="service-number">05</span><h3>Digital Marketing</h3><p>Social media management, online promotions and campaigns to help your brand reach people.</p><a href="#contact" class="service-link" data-service="Digital Marketing">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/service-editing.jpg" alt="VIDEO EDITING & REELS banner" loading="lazy"><span class="service-number">06</span><h3>Video Editing & Reels</h3><p>Engaging video edits, reels, promotional clips and content for your business or event.</p><a href="#contact" class="service-link" data-service="Video Editing & Reels">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/service-photo.jpg" alt="PHOTOGRAPHY banner" loading="lazy"><span class="service-number">07</span><h3>Photography</h3><p>Product, business, event and promotional photography to tell your story visually.</p><a href="#contact" class="service-link" data-service="Photography">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/portfolio/work-creative.jpg" alt="AI & CREATIVE SERVICES banner" loading="lazy"><span class="service-number">08</span><h3>AI & Creative Services</h3><p>AI-assisted creative concepts, visual content and promotional assets for your brand.</p><a href="#contact" class="service-link" data-service="AI & Creative Services">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/portfolio/work-creative2.jpg" alt="GRAPHIC DESIGN & BRANDING banner" loading="lazy"><span class="service-number">09</span><h3>Graphic Design & Branding</h3><p>Logos, banners, visiting cards, flyers and branded designs for your business.</p><a href="#contact" class="service-link" data-service="Graphic Design & Branding">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/portfolio/work-web.jpg" alt="DIGITAL & ONLINE SERVICES banner" loading="lazy"><span class="service-number">10</span><h3>Digital & Online Services</h3><p>Help with everyday digital tasks, online forms and document-related service assistance.</p><a href="#contact" class="service-link" data-service="Digital & Online Services">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/service-electronics.jpg" alt="ELECTRONICS & SECOND-HAND banner" loading="lazy"><span class="service-number">11</span><h3>Electronics & Second-Hand</h3><p>Support for electronics sales and connecting buyers and sellers of pre-owned products.</p><a href="#contact" class="service-link" data-service="Electronics & Second-Hand">Enquire about service <span>↗</span></a></article>
+          <article class="service-card"><img class="service-banner" src="assets/services/technical-support-banner.jpg" alt="IT & TECHNICAL SUPPORT banner" loading="lazy"><span class="service-number">12</span><h3>IT & Technical Support</h3><p>Practical technology guidance, setup support and troubleshooting for everyday needs.</p><a href="#contact" class="service-link" data-service="IT & Technical Support">Enquire about service <span>↗</span></a></article>
+        </div>
+        <div class="services-note"><span class="note-star">✦</span><p>Need something different? <strong>Tell us about your requirement.</strong> We’ll help you explore a suitable solution.</p><a href="#contact">Discuss your project ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-art"><div class="about-art-glow"></div><div class="about-big-mark">RJ<span></span></div><div class="about-caption"><span class="caption-line"></span><span>Ideas into digital solutions</span></div><div class="about-floating about-float-one">✦ Digital</div></div>
+        <div class="about-copy"><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> ABOUT RJ PRODUCTION</div><h2>A reliable partner for your <span>next step.</span></h2><p>RJ PRODUCTION brings technology, digital services, security and promotion together to help individuals and businesses solve problems and move forward.</p><p>Whether you need a website, an app, CCTV setup, computer support or creative content, start with a conversation and let’s find the right solution.</p><div class="about-points"><div><span>✓</span> Multiple services, one point of contact</div><div><span>✓</span> Solutions for individuals and businesses</div><div><span>✓</span> Clear communication from enquiry to delivery</div></div><a class="btn btn-primary" href="#contact">Let’s Work Together <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="projects">
+      <div class="container">
+        <div class="section-heading"><div><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> OUR WORK</div><h2>Built around <span>your ideas.</span></h2></div><p>Have a project in mind? Let’s discuss what you want to create and how we can help.</p></div>
+        <div class="work-grid">
+          <article class="work-card work-blue"><div class="work-visual"><div class="work-window"><div class="window-dots"><i></i><i></i><i></i></div><div class="window-layout"><div class="window-sidebar"></div><div class="window-body"><b></b><b></b><div class="window-blocks"><i></i><i></i></div></div></div></div></div><div class="work-info"><span>01 / DIGITAL</span><h3>Websites & Business Platforms</h3><p>Online experiences that present your business professionally.</p></div></article>
+          <article class="work-card work-violet"><div class="work-visual"><div class="phone-mock"><div class="phone-speaker"></div><div class="phone-ui"><div class="phone-logo">RJ</div><b>Ideas that move</b><span></span><span></span><i></i></div></div><div class="work-orb"></div></div><div class="work-info"><span>02 / APPLICATIONS</span><h3>Mobile Apps & UI</h3><p>Useful digital experiences designed around real needs.</p></div></article>
+          <article class="work-card work-cyan"><div class="work-visual"><div class="security-screen"><div class="camera-view"><span>CAM 01 · LIVE PREVIEW</span><i></i></div><div class="camera-view small-view"><span>CAM 02</span><i></i></div><div class="security-base">◉ &nbsp; SECURITY SYSTEM</div></div></div><div class="work-info"><span>03 / SECURITY</span><h3>CCTV & Technology Setup</h3><p>Practical security and technology solutions for your space.</p></div></article>
+        </div>
+        <p class="work-disclaimer">Illustrative previews shown above. Add your completed projects and real portfolio images here as they become available.</p>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> OUR PORTFOLIO</div><h2>Apps & websites <span>we’re building.</span></h2></div>
+          <p>A selection of RJ PRODUCTION projects, app concepts and digital experiences. Ask us about a project or a similar solution for your business.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-becho"><span class="portfolio-badge">E-COMMERCE APP</span><div class="portfolio-device"><div class="device-top"></div><div class="device-brand">BECHO<span>.</span></div><div class="device-search"></div><div class="device-products"><i></i><i></i><i></i><i></i></div><div class="device-nav"><i></i><i></i><i></i><i></i></div></div><span class="portfolio-art-label">Buy • Sell • Discover</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>01 / MOBILE APP</span><span class="portfolio-status">APP PROJECT</span></div><h3>BECHO</h3><p>Electronics and second-hand marketplace concept with product listings, categories and customer enquiries.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Build a similar app <span>↗</span></a></div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-finance"><span class="portfolio-badge">FINTECH UI</span><div class="finance-panel"><div class="finance-top"><span>VJ Finance</span><i>●</i></div><small>Available loan limit</small><strong>₹70,000</strong><div class="finance-progress"><i></i></div><div class="finance-tiles"><i></i><i></i><i></i></div><div class="finance-button">Explore plans</div></div><span class="portfolio-art-label">Simple • Clear • Professional</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>02 / FINANCE UI</span><span class="portfolio-status">DESIGN CONCEPT</span></div><h3>VJ Finance</h3><p>Blue-and-white fintech interface concept with customer dashboard, loan-plan and repayment UI ideas.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Build a similar app <span>↗</span></a></div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-organic"><span class="portfolio-badge">ORGANIC STORE</span><div class="organic-pack"><div class="organic-leaf">✿</div><strong>ARATIS</strong><small>ORGANICS</small><span>Nature inspired</span></div><span class="portfolio-art-label">Fresh ideas, digital reach</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>03 / E-COMMERCE</span><span class="portfolio-status">APP PROJECT</span></div><h3>Aratis Organics</h3><p>Organics app project focused on presenting products and creating a clean customer shopping experience.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Build a similar app <span>↗</span></a></div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-train"><span class="portfolio-badge">3D SIMULATION</span><div class="train-scene"><div class="train-sky"></div><div class="train-track"></div><div class="train-engine"><i></i><i></i><i></i><b></b></div><div class="train-wheels"><i></i><i></i><i></i></div></div><span class="portfolio-art-label">Explore routes in 3D</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>04 / 3D PROJECT</span><span class="portfolio-status">PROTOTYPE CONCEPT</span></div><h3>Indian Railway Simulation</h3><p>A train simulation concept exploring Indian passenger trains, driver and external camera views, and route maps.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Discuss a 3D project <span>↗</span></a></div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-support"><span class="portfolio-badge">SERVICE APP</span><div class="support-window"><div class="support-head">Service Support</div><div class="support-docs"><i>▤</i><i>▣</i><i>✓</i></div><div class="support-lines"><i></i><i></i><i></i></div></div><span class="portfolio-art-label">Your documents, our support</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>05 / SERVICE APP</span><span class="portfolio-status">APP CONCEPT</span></div><h3>Service Support</h3><p>A service assistance concept with document-related service cards and a simple customer-first interface.</p><a href="#contact" class="service-link" data-service="Mobile App Development">Build a similar app <span>↗</span></a></div>
+          </article>
+          <article class="portfolio-card">
+            <div class="portfolio-art portfolio-web"><span class="portfolio-badge">BUSINESS WEBSITE</span><div class="web-window"><div class="web-window-bar"><i></i><i></i><i></i></div><div class="web-hero-line"></div><div class="web-hero-sub"></div><div class="web-mini-cards"><i></i><i></i><i></i></div></div><span class="portfolio-art-label">Your business, online</span></div>
+            <div class="portfolio-details"><div class="portfolio-meta"><span>06 / WEBSITE</span><span class="portfolio-status">WEB PROJECT</span></div><h3>RJ PRODUCTION Website</h3><p>A responsive business website showcasing technology, security, creative and digital services.</p><a href="#contact" class="service-link" data-service="Website Development">Build a similar website <span>↗</span></a></div>
+          </article>
+        </div>
+        <p class="portfolio-note">Portfolio cards are project summaries and visual previews. They do not imply that every concept is publicly launched or commercially available.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> LET’S CONNECT</div><h2>Have a project<br>in <span>mind?</span></h2><p>Share what you need. We’ll help you take the next step.</p>
+          <div class="contact-methods"><a href="https://wa.me/918286232467" target="_blank" rel="noopener" class="contact-method" id="whatsappContact"><span class="contact-method-icon wa-icon">✆</span><span><small>CHAT WITH US</small><strong>WhatsApp</strong></span><b>↗</b></a><a href="tel:+918286232467" class="contact-method" id="phoneContact"><span class="contact-method-icon phone-icon">⌕</span><span><small>CALL US</small><strong>Phone</strong></span><b>↗</b></a><a href="https://rjproduction.in/" target="_blank" rel="noopener" class="contact-method"><span class="contact-method-icon web-icon">↗</span><span><small>VISIT OUR WEBSITE</small><strong>rjproduction.in</strong></span><b>↗</b></a></div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-heading"><h3>Send an enquiry</h3><p>Fill in the details and continue on WhatsApp.</p></div>
+          <div class="form-row"><label for="name">Your name <span>*</span><input id="name" name="name" type="text" placeholder="Enter your name" required></label><label for="phone">Phone number <span>*</span><input id="phone" name="phone" type="tel" inputmode="tel" placeholder="Enter your phone number" required></label></div>
+          <label for="service">Service required <span>*</span><select id="service" name="service" required><option value="">Choose a service</option><option>Website Development</option><option>Mobile App Development</option><option>CCTV & Security</option><option>Computer & Laptop Service</option><option>Digital Marketing</option><option>Video Editing & Reels</option><option>Photography</option><option>AI & Creative Services</option><option>Graphic Design & Branding</option><option>Digital & Online Services</option><option>Electronics & Second-Hand</option><option>IT & Technical Support</option><option>Other / Not sure yet</option></select></label>
+          <label for="message">Tell us a little about your requirement <textarea id="message" name="message" rows="4" placeholder="What do you need help with?"></textarea></label>
+          <button type="submit" class="btn btn-primary form-submit">Continue on WhatsApp <span>↗</span></button>
+          <p class="form-privacy">Your message will open in WhatsApp for you to review before sending.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="#top"><img class="brand-logo" src="assets/logo/rj-production-logo.png" alt="RJ PRODUCTION logo"><span class="brand-copy"><strong>RJ PRODUCTION</strong><small>YOUR TRUSTED TECHNOLOGY PARTNER</small></span></a><p>Technology • Digital • Security • Promotion</p><a class="back-top" href="#top">Back to top ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> RJ PRODUCTION. All rights reserved.</span><span>Made for better digital experiences.</span></div></footer>
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" aria-label="Contact us on WhatsApp"><span>✆</span><small>WhatsApp</small></a>
+<script src="script.js" defer></script>
+</body>
+</html>
