@@ -371,3 +371,44 @@ html[data-rj-global-palette] .rj-colors-panel .rj-colors-presets-title strong {
 #mainNav a {
   transition: color 0.3s ease;
 }
+
+
+/* FIX: Color Studio hidden by default */
+#rjColorsPanel {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  width: min(420px, 92vw);
+  height: 100vh;
+  z-index: 10002;
+  overflow-y: auto;
+  background: var(--surface, #ffffff);
+  box-shadow: -15px 0 45px rgba(0,0,0,.18);
+  transform: translateX(110%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .35s ease, visibility .35s ease;
+}
+
+#rjColorsPanel.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Backdrop */
+#rjColorsBackdrop[hidden] {
+  display: none !important;
+}
+
+#rjColorsBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(0,0,0,.45);
+}
+
+/* Panel close button */
+#rjColorsClose {
+  cursor: pointer;
+}
